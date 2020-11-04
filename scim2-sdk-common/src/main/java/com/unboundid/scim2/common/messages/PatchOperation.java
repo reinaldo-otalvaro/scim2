@@ -302,12 +302,16 @@ public abstract class PatchOperation
         throws ScimException
     {
       super(path);
+
+      // FIX: Mark Howard MOX-3052
+      // See https://github.com/pingidentity/scim2/issues/103
       if(value == null || value.isNull() ||
-           ((value.isArray() || value.isObject()) && value.size() == 0))
-       {
-         throw BadRequestException.invalidSyntax(
-             "value field must not be null or an empty container");
-       }
+              (value.isObject() && value.size() == 0))
+      {
+        throw BadRequestException.invalidSyntax(
+                "value field must not be null or an empty object");
+      }
+
       if(path == null && !value.isObject())
       {
         throw BadRequestException.invalidSyntax(

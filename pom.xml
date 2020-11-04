@@ -277,28 +277,6 @@
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>aggregate</id>
-            <goals>
-              <goal>aggregate-jar</goal>
-            </goals>
-            <phase>verify</phase>
-            <inherited>false</inherited>
-            <configuration>
-              <outputDirectory>${project.build.directory}/javadoc</outputDirectory>
-              <linksource>true</linksource>
-              <quiet>true</quiet>
-              <!-- Inherited POMs may define the javadoc.excludedPackageNames
-              property to exclude packages on a component-by-component basis. -->
-              <excludePackageNames>${javadoc.excludedPackageNames}</excludePackageNames>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-release-plugin</artifactId>
         <configuration>
           <tagNameFormat>scim-@{project.version}</tagNameFormat>

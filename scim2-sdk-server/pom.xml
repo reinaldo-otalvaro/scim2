@@ -150,23 +150,6 @@
           </execution>
         </executions>
       </plugin>
-      <plugin>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>create-javadoc-archive</id>
-            <phase>package</phase>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-            <configuration>
-              <quiet>true</quiet>
-              <linksource>true</linksource>
-              <excludePackageNames>${javadoc.excludedPackageNames}</excludePackageNames>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
     </plugins>
   </build>
 
